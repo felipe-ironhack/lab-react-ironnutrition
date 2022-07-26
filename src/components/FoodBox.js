@@ -1,4 +1,3 @@
-import React from 'react'
 import { Card, Col, Button } from 'antd';
 
 const FoodBox = ({name, calories, image, servings}) => {
@@ -15,7 +14,7 @@ const FoodBox = ({name, calories, image, servings}) => {
       <p>
         <b>Total Calories: {calories * servings} </b> kcal
       </p>
-      <Button type="primary"> Delete </Button>
+      <Button type="danger"> Delete </Button>
     </Card>
   </Col>
   )
