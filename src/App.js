@@ -4,15 +4,15 @@ import FoodList from './components/FoodList';
 import { useState } from 'react';
 import AddFoodForm from './components/AddFoodForm';
 import SearchBar from './components/SearchBar';
-import { Divider } from 'antd';
+import { Divider, Button } from 'antd';
 
 function App() {
   const [foods, setFoods] = useState(foodsList);
   const [search, setSearch] = useState(foods);
+  const [showForm, setShowForm] = useState(false)
 
   const createFood = (newFood) => {
-    if (foods.includes(newFood.name)) return;
-    setFoods([...foods, newFood]);
+    setSearch([...search, newFood]);
   };
 
   const searchFoods = (seachableFood) => {
@@ -30,9 +30,15 @@ function App() {
     setSearch(newFoods)
   };
 
+  const displayForm = () => {
+    setShowForm(!showForm)
+  }
+
   return (
     <div className="App">
-      <AddFoodForm createFood={createFood} />
+      <Divider> Add Food Entry </Divider>
+      <Button type="default" onClick={displayForm}> {showForm ? 'Close' : 'Show Form'} </Button>
+     {showForm && <AddFoodForm createFood={createFood} />}
 
       <Divider> Search </Divider>
       <SearchBar searchFoods={searchFoods} />

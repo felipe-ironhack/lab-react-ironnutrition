@@ -18,15 +18,17 @@ const AddFoodForm = ({createFood}) => {
 
   const handleCreation = () => {
     createFood(newFood);
+    setName('')
+    setImage('')
+    setCalories('')
+    setServings('')
   }
 
   return (
     <div
       style={overrideCenter}
     >
-      <Divider> Add Food Entry </Divider>
-
-        {/* This is the input for the name */}
+      {/* This is the input for the name */}
       <div className="input-box">
         <label htmlFor="name">Name </label>
         <Input
@@ -39,8 +41,7 @@ const AddFoodForm = ({createFood}) => {
         />
       </div>
 
-
-        {/* This is the input for the Image */}
+      {/* This is the input for the Image */}
       <div className="input-box">
         <label htmlFor="image"> Image </label>
         <Input
@@ -53,7 +54,7 @@ const AddFoodForm = ({createFood}) => {
         />
       </div>
 
-        {/* This is the input for the calories */}
+      {/* This is the input for the calories */}
       <div className="input-box">
         <label htmlFor="calories">Calories </label>
         <Input
@@ -66,7 +67,7 @@ const AddFoodForm = ({createFood}) => {
         />
       </div>
 
-        {/* This is the input for the servings */}
+      {/* This is the input for the servings */}
       <div className="input-box">
         <label htmlFor="servings">Servings </label>
         <Input
