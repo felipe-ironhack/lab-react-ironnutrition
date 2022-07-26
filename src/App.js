@@ -6,7 +6,7 @@ import AddFoodForm from './components/AddFoodForm';
 import SearchBar from './components/SearchBar';
 import { Divider, Button } from 'antd';
 
-function App() {
+const  App =  () => {
   const [foods, setFoods] = useState(foodsList);
   const [search, setSearch] = useState(foods);
   const [showForm, setShowForm] = useState(false)
