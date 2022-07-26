@@ -1,19 +1,14 @@
 import React from 'react';
 import FoodBox from './FoodBox';
+import { Row } from 'antd' ;
 
-const FoodList = (props) => {
+const FoodList = ({foods}) => {
 
-  const foodObj = {  
-    name: 'Orange',
-    calories: 85,
-    image: 'https://i.imgur.com/abKGOcv.jpg',
-    servings: 1,
-  }
-  
   return (
     <>
-      <h1>FoodList</h1>
-      <FoodBox {...foodObj}/>
+      <Row style={{ width: '100%', justifyContent: 'center' }}>
+         {foods.map((food, index) => <FoodBox key={index} {...food} />)}    
+      </Row>
     </>
   );
 };
