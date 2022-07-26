@@ -8,7 +8,7 @@ import { Divider } from 'antd';
 
 function App() {
   const [foods, setFoods] = useState(foodsList);
-  const [search, setSearch] = useState(foods)
+  const [search, setSearch] = useState(foods);
 
   const createFood = (newFood) => {
     if (foods.includes(newFood.name)) return;
@@ -17,15 +17,18 @@ function App() {
 
   const searchFoods = (seachableFood) => {
     const foodsToSearch = [...foods];
-    const filtered = foodsToSearch.filter(
-      (food) => food.name.toLowerCase().includes(seachableFood.trim().toLowerCase())
+    const filtered = foodsToSearch.filter((food) =>
+      food.name.toLowerCase().includes(seachableFood.trim().toLowerCase())
     );
     setSearch(filtered);
   };
 
   const deleteFood = (foodToBeDeleted) => {
-    console.log('passed')
-  }
+    const newFoods = search.filter(
+      (food) => food.name.toLowerCase() !== foodToBeDeleted.toLowerCase()
+    );
+    setSearch(newFoods)
+  };
 
   return (
     <div className="App">
@@ -35,7 +38,7 @@ function App() {
       <SearchBar searchFoods={searchFoods} />
 
       <Divider> Food List </Divider>
-      <FoodList foods={search} />
+      <FoodList foods={search} deleteFood={deleteFood} />
     </div>
   );
 }
