@@ -1,13 +1,9 @@
 import { Input } from 'antd';
-import { useEffect, useState } from 'react';
+import {  useState } from 'react';
 import { overrideCenter } from './helpers/style.helper';
 
 const SearchBar = ({searchFoods}) => {
   const [searched, setSearched] = useState('');
-
-  // useEffect(() => {
-  //   searchFoods(searched)
-  // }, [searched])
 
   return (
     <div
@@ -22,7 +18,7 @@ const SearchBar = ({searchFoods}) => {
           value={searched}
           onChange={(e) => {
             setSearched(e.target.value);
-            searchFoods(searched)
+            searchFoods(e.target.value);
         }}
         />
       </div>
