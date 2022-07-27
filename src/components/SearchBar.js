@@ -5,9 +5,9 @@ import { overrideCenter } from './helpers/style.helper';
 const SearchBar = ({searchFoods}) => {
   const [searched, setSearched] = useState('');
 
-  useEffect(() => {
-    searchFoods(searched)
-  }, [searched])
+  // useEffect(() => {
+  //   searchFoods(searched)
+  // }, [searched])
 
   return (
     <div
@@ -22,6 +22,7 @@ const SearchBar = ({searchFoods}) => {
           value={searched}
           onChange={(e) => {
             setSearched(e.target.value);
+            searchFoods(searched)
         }}
         />
       </div>

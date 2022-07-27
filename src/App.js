@@ -5,6 +5,7 @@ import { useState } from 'react';
 import AddFoodForm from './components/AddFoodForm';
 import SearchBar from './components/SearchBar';
 import { Divider, Button } from 'antd';
+import NoItems from './components/NoItems';
 
 const  App =  () => {
   const [foods, setFoods] = useState(foodsList);
@@ -44,7 +45,9 @@ const  App =  () => {
       <SearchBar searchFoods={searchFoods} />
 
       <Divider> Food List </Divider>
-      <FoodList foods={search} deleteFood={deleteFood} />
+      {search.length > 0 ? <FoodList foods={search} deleteFood={deleteFood} /> 
+        :
+      <NoItems />}
     </div>
   );
 }
