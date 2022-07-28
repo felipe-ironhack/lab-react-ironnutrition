@@ -29,7 +29,8 @@ const  App =  () => {
     const newFoods = search.filter(
       (food) => food.name.toLowerCase() !== foodToBeDeleted.toLowerCase()
     );
-    setSearch(newFoods)
+    setSearch(newFoods);
+    setFoods(newFoods);
   };
 
   const displayForm = () => {
