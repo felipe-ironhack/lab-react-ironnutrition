@@ -14,6 +14,7 @@ const  App =  () => {
 
   const createFood = (newFood) => {
     setSearch([...search, newFood]);
+    setFoods([...foods, newFood]);
   };
 
   const searchFoods = (seachableFood) => {
