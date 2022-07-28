@@ -13,8 +13,8 @@ const  App =  () => {
   const [showForm, setShowForm] = useState(false)
 
   const createFood = (newFood) => {
-    setSearch([...search, newFood]);
-    setFoods([...foods, newFood]);
+    setSearch(prevSearch => [...prevSearch, newFood]);
+    setFoods(prevFoods => [...prevFoods, newFood]);
   };
 
   const searchFoods = (seachableFood) => {
@@ -26,7 +26,7 @@ const  App =  () => {
   };
 
   const deleteFood = (foodToBeDeleted) => {
-    const newFoods = search.filter(
+    const newFoods = foods.filter(
       (food) => food.name.toLowerCase() !== foodToBeDeleted.toLowerCase()
     );
     setSearch(newFoods);
