@@ -15,6 +15,7 @@ const AddFoodForm = ({createFood}) => {
     calories,
     servings
   }
+  
 
   const handleCreation = () => {
     createFood(newFood);
