@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Input, Divider, Button } from 'antd';
+import { Input, Divider } from 'antd';
 import { overrideCenter } from './helpers/style.helper';
 
 const AddFoodForm = ({createFood}) => {
@@ -17,7 +17,8 @@ const AddFoodForm = ({createFood}) => {
   }
   
 
-  const handleCreation = () => {
+  const handleCreation = (e) => {
+    e.preventDefault();
     createFood(newFood);
     setName('')
     setImage('')
@@ -26,8 +27,9 @@ const AddFoodForm = ({createFood}) => {
   }
 
   return (
-    <div
+    <form
       style={overrideCenter}
+      onSubmit= {handleCreation}
     >
       {/* This is the input for the name */}
       <div className="input-box">
@@ -81,10 +83,9 @@ const AddFoodForm = ({createFood}) => {
         />
       </div>
 
-      <Button type="primary" onClick={() => handleCreation()}> Create </Button>
-
+      <button type="submit" className='btn-primary'> Create </button>
       <Divider />
-    </div>
+    </form>
   );
 };
 

@@ -41,7 +41,7 @@ const  App =  () => {
     <div className="App">
       <Divider> Add Food Entry </Divider>
       <Button type="default" onClick={displayForm}> {showForm ? 'Close' : 'Show Form'} </Button>
-     {showForm && <AddFoodForm createFood={createFood} />}
+      {showForm && <AddFoodForm createFood={createFood} />}
 
       <Divider> Search </Divider>
       <SearchBar searchFoods={searchFoods} />

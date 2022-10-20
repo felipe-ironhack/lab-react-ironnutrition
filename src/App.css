@@ -21,7 +21,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  /* font-size: calc(10px + 2vmin); */
   color: white;
 }
 
@@ -59,4 +59,20 @@
 .no-items-icon{
   margin-top: 2rem;
   font-size: 20rem;
+}
+
+
+
+
+.btn-primary {
+  padding: .29em 1.07em;
+  color: #FFF;
+  background-color: #429be3;
+  border: 1px solid #429be3;
+  border-radius: 2px;
+}
+
+.btn-primary:hover {
+  background-color: #40A9FF;
+  border: 1px solid #40A9FF;
 }
